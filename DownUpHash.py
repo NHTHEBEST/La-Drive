@@ -61,7 +61,7 @@ def torrent():
 		filedown = False
 #-------------------------------------------------------------------------------
 #get the magnet url
-def gethasg():
+def gethash():
 	output = requests.get(URL).text
 	print(output)
 	print("url reveived")
@@ -72,4 +72,7 @@ def upload():
 	os.system(UPLOADCMD+str(SAVEPATH))
 	print("file uploaded")
 #-------------------------------------------------------------------------------
-
+#delete uploaded data
+def deldata():
+	if DELFILE:
+		os.system("rm -r"SAVEPATH"*")
