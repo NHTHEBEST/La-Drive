@@ -80,3 +80,7 @@ def upload():
 def deldata():
 	if DELFILE:
 		os.system("rm -r "SAVEPATH"*")
+#-------------------------------------------------------------------------------
+# updates the server
+def updateserver(hash):
+	requests.get(URL+"/update?key=Thekey&hash="+hash)
