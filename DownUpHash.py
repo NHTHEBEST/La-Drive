@@ -35,8 +35,10 @@ import requests
 
 
 #loop for ever
-#deley of UPDDELAY
 #gethash
+# if gethash returns nothing
+#deley of UPDDELAY
+#end if
 # torrent
 # upload
 # delet
