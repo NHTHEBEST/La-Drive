@@ -52,26 +52,32 @@ def torrent():
 	ses = lt.session()
 	ses.listen_on(6881, 6891)
 	params = {
-	    'save_path': SAVEPATH,
-	    'storage_mode': lt.storage_mode_t(2),
-	    'paused': False,
-	    'auto_managed': True,
-	    'duplicate_is_error': True}
+		'save_path': SAVEPATH,
+		'storage_mode': lt.storage_mode_t(2),
+		'paused': False,
+		'auto_managed': True,
+		'duplicate_is_error': True}
 	link = "magnet:?xt=urn:btih:"HASH
 	handle = lt.add_magnet_uri(ses, link, params)
 	ses.start_dht()
 
 	print 'downloading metadata...'
 	while (not handle.has_metadata()):
-	    time.sleep(1)
+		time.sleep(1)
 	print 'got metadata, starting torrent download...'
 	while (handle.status().state != lt.torrent_status.seeding):
-		time.sleep(5)
+		 s = handle.status()
+		 state_str = ['queued', 'checking', 'downloading metadata', \
+					 'downloading', 'finished', 'seeding', 'allocating']
+		 print '%.2f%% complete (down: %.1f kb/s up: %.1f kB/s peers: %d) %s %.3' % \
+				(s.progress * 100, s.download_rate / 1000, s.upload_rate / 1000, \
+				s.num_peers, state_str[s.state], s.total_download/1000000)
+		 time.sleep(5)
 #-------------------------------------------------------------------------------
-#get the magnet url
+#get the hash from server
 def gethash():
 	output = requests.get(URL).text
-	print(output)
+	print("hash is:"output)
 	print("url reveived")
 	return output
 #-------------------------------------------------------------------------------
@@ -84,10 +90,12 @@ def upload():
 def deldata():
 	if DELFILE:
 		os.system("rm -r "SAVEPATH"*")
+		print("File deleted")
 #-------------------------------------------------------------------------------
 # updates the server
 def updateserver(hash):
 	requests.get(URL+"/update?key=Thekey&hash="+hash)
+	print("server updated")
 #-------------------------------------------------------------------------------
 #main
 while True:
