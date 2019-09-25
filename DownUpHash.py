@@ -67,6 +67,7 @@ def torrent():
 	print 'got metadata, starting torrent download...'
 	while (handle.status().state != lt.torrent_status.seeding):
 		filedown = False
+	if filedown == True:
 #-------------------------------------------------------------------------------
 #get the magnet url
 def gethash():
