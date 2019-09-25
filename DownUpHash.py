@@ -21,7 +21,7 @@ SAVEPATH= ""       #Path to dumped data
 global SAVEPATH
 UPDDELAY= 60       #Delay between database syncs
 global UPDDELAY
-UPLOADCMD = "gdrive upload -p 1BMRqZT7fwv0X_ZzweNrePfd3pgqaJ8Il -r"
+UPLOADCMD = "gdrive upload -p 1BMRqZT7fwv0X_ZzweNrePfd3pgqaJ8Il -r "
 global UPLOADCMD
 #-------------------------------------------------------------------------------
 
@@ -57,10 +57,8 @@ def torrent():
 #-------------------------------------------------------------------------------
 #get the magnet url
 def geturl():
-	url = ""     #database link
-	output = requests.get(url).text
+	output = requests.get(URL).text
 	print(output)
-	URL = output
 	print("url reveived")
 #-------------------------------------------------------------------------------
 #upload file to the drive
