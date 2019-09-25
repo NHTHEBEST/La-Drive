@@ -89,5 +89,5 @@ def updateserver(hash):
 #-------------------------------------------------------------------------------
 #main
 while True:
-	gethash()
+	hash = gethash()
 	if 
