@@ -15,7 +15,7 @@
 # globals
 URL     = ""       #URL for downloading magnet link
 global URL
-DELFILE = False    #Deletes downloaded data after uploading
+DELFILE = True    #Deletes downloaded data after uploading
 global DELFILE
 SAVEPATH= ""       #Path to dumped data 
 global SAVEPATH
@@ -66,8 +66,7 @@ def torrent():
 	    time.sleep(1)
 	print 'got metadata, starting torrent download...'
 	while (handle.status().state != lt.torrent_status.seeding):
-		filedown = False
-	if filedown == True:
+		time.sleep(5)
 #-------------------------------------------------------------------------------
 #get the magnet url
 def gethash():
@@ -98,4 +97,7 @@ while True:
 	else:
 		HASH = hash
 		torrent()
+		upload()
+		deldata()
+		updateserver(hash)
 
