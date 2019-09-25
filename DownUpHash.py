@@ -86,3 +86,8 @@ def deldata():
 # updates the server
 def updateserver(hash):
 	requests.get(URL+"/update?key=Thekey&hash="+hash)
+#-------------------------------------------------------------------------------
+#main
+while True:
+	gethash()
+	if 
