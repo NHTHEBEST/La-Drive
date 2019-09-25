@@ -57,7 +57,7 @@ def torrent():
 	    'paused': False,
 	    'auto_managed': True,
 	    'duplicate_is_error': True}
-	link = HASH
+	link = "magnet:?xt=urn:btih:"HASH
 	handle = lt.add_magnet_uri(ses, link, params)
 	ses.start_dht()
 
