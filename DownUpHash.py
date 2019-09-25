@@ -36,7 +36,11 @@ import requests
 
 #loop for ever
 #deley of UPDDELAY
-#
+#gethash
+# torrent
+# upload
+# delet
+# update server of completion
 
 #-------------------------------------------------------------------------------
 # torrenter
@@ -75,4 +79,4 @@ def upload():
 #delete uploaded data
 def deldata():
 	if DELFILE:
-		os.system("rm -r"SAVEPATH"*")
+		os.system("rm -r "SAVEPATH"*")
