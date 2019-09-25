@@ -56,10 +56,11 @@ def torrent():
 		filedown = False
 #-------------------------------------------------------------------------------
 #get the magnet url
-def geturl():
+def gethasg():
 	output = requests.get(URL).text
 	print(output)
 	print("url reveived")
+	return output
 #-------------------------------------------------------------------------------
 #upload file to the drive
 def upload():
