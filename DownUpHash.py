@@ -21,6 +21,8 @@ SAVEPATH= ""       #Path to dumped data
 global SAVEPATH
 UPDDELAY= 60       #Delay between database syncs
 global UPDDELAY
+UPLOADCMD = "gdrive upload -p 1BMRqZT7fwv0X_ZzweNrePfd3pgqaJ8Il -r"
+global UPLOADCMD
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
@@ -63,7 +65,7 @@ def geturl():
 #-------------------------------------------------------------------------------
 #upload file to the drive
 def upload():
-	os.system('gdrive upload'str(SAVEPATH)'-p The Drive')
+	os.system(UPLOADCMD+str(SAVEPATH))
 	print("file uploaded")
 #-------------------------------------------------------------------------------
 
