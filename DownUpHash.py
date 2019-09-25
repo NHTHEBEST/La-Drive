@@ -23,6 +23,8 @@ UPDDELAY= 60       #Delay between database syncs
 global UPDDELAY
 UPLOADCMD = "gdrive upload -p 1BMRqZT7fwv0X_ZzweNrePfd3pgqaJ8Il -r "
 global UPLOADCMD
+HASH    = ""       #hash to download
+global HASH
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
@@ -55,7 +57,7 @@ def torrent():
 	    'paused': False,
 	    'auto_managed': True,
 	    'duplicate_is_error': True}
-	link = URL
+	link = HASH
 	handle = lt.add_magnet_uri(ses, link, params)
 	ses.start_dht()
 
@@ -90,4 +92,8 @@ def updateserver(hash):
 #main
 while True:
 	hash = gethash()
-	if 
+	if hash == "":
+		time.sleep(UPDDELAY)
+	else:
+		hash = HASH
+
