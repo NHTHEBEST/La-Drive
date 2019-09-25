@@ -95,5 +95,6 @@ while True:
 	if hash == "":
 		time.sleep(UPDDELAY)
 	else:
-		hash = HASH
+		HASH = hash
+		torrent()
 
