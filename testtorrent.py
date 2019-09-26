@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-
+import time
+import libtorrent as lt
 HASH = input("input hash")
 SAVEPATH = '/home/cosmo/Desktop/test'
 ses = lt.session()
