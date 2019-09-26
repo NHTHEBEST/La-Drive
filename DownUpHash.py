@@ -13,7 +13,7 @@
 
 #-------------------------------------------------------------------------------
 # globals
-URL     = ""       #URL for downloading magnet link
+URL     = ""       #URL for downloading magnet link (server url)
 global URL
 DELFILE = True    #Deletes downloaded data after uploading
 global DELFILE
@@ -108,4 +108,4 @@ while True:
 		upload()
 		deldata()
 		updateserver(hash)
-
+#-------------------------------------------------------------------------------
