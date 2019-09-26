@@ -13,11 +13,15 @@
 
 #-------------------------------------------------------------------------------
 # globals
+<<<<<<< HEAD
 URL     = ""       #URL for downloading magnet link (server url)
+=======
+URL     = "http://noserver.hadar.net.nz/thedrive/"       #URL for downloading magnet link
+>>>>>>> dbce5bc6b8bc41261eb33f610150b20a88fbaaee
 global URL
 DELFILE = True    #Deletes downloaded data after uploading
 global DELFILE
-SAVEPATH= ""       #Path to dumped data 
+SAVEPATH= "./stuff/"       #Path to dumped data 
 global SAVEPATH
 UPDDELAY= 60       #Delay between database syncs
 global UPDDELAY
@@ -76,7 +80,7 @@ def torrent():
 #-------------------------------------------------------------------------------
 #get the hash from server
 def gethash():
-	output = requests.get(URL).text
+	output = requests.get(URL+"get.php").text
 	print("hash is:"output)
 	print("url reveived")
 	return output
@@ -94,7 +98,7 @@ def deldata():
 #-------------------------------------------------------------------------------
 # updates the server
 def updateserver(hash):
-	requests.get(URL+"/update?key=Thekey&hash="+hash)
+	requests.get(URL+"/rm.php?key=Thekey&hash="+hash)
 	print("server updated")
 #-------------------------------------------------------------------------------
 #main
