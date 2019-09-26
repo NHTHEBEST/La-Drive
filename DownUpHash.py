@@ -14,7 +14,6 @@
 #-------------------------------------------------------------------------------
 # globals
 <<<<<<< HEAD
-URL     = ""       #URL for downloading magnet link (server url)
 =======
 URL     = "http://noserver.hadar.net.nz/thedrive/"       #URL for downloading magnet link
 >>>>>>> dbce5bc6b8bc41261eb33f610150b20a88fbaaee
