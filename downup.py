@@ -3,7 +3,7 @@
 # Name:        Quiz 0.1.5
 # Purpose:     Download magnet links from url and upload completed file
 #
-# Author:      cosmo.zavoda
+# Author:      cosmo.zavoda, NHTHEBEST
 #
 # Created:     25/09/2019
 # Copyright:   (c) cosmo.zavoda 2019 (The Drive)
@@ -92,7 +92,7 @@ def torrent():
 #-------------------------------------------------------------------------------
 #get the hash from server
 def gethash():
-	output = requests.get(URL+"get.php").text
+	output = requests.get(URL+"get.php?ISALT").text
 	print("hash is:"+output)
 	print("url reveived")
 	return output
@@ -111,7 +111,7 @@ def deldata():
 #-------------------------------------------------------------------------------
 # updates the server
 def updateserver(hash):
-	requests.get(URL+"/rm.php?key=625c93b5-fbfe-4ea5-921d-27b7da51aa10&hash="+hash)
+	requests.get(URL+"/rm.php?key=625c93b527b7da51aa10&hash="+hash)
 	print("server updated")
 #-------------------------------------------------------------------------------
 #main
