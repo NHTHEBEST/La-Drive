@@ -1,4 +1,4 @@
 grive 
 python-requests
-libtorrent
+libtorrent-dev
 
